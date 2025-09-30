@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Task Manager</h1>
+            <div class="overall-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overallProgress"></div>
+                </div>
+                <span id="progressText">0% Complete</span>
+            </div>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('tasks')">Tasks</button>
+            <button class="tab-btn" onclick="showTab('dashboard')">Dashboard</button>
+        </nav>
+
+        <div id="tasksTab" class="tab-content active">
+            <section class="add-task-section">
+                <h2>Add New Task</h2>
+                <form id="taskForm" class="task-form">
+                    <input type="text" id="assigneeName" placeholder="Assignee Name" required>
+                    <input type="text" id="taskDescription" placeholder="Task Description" required>
+                    <input type="date" id="taskDeadline" required>
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+
+            <section class="tasks-section">
+                <div class="section-header">
+                    <h2>Tasks</h2>
+                    <div class="filters">
+                        <input type="text" id="taskSearch" placeholder="Search tasks...">
+                        <select id="assigneeFilter">
+                            <option value="all">All Assignees</option>
+                        </select>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="overdue">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tasks-container" id="tasksContainer"></div>
+            </section>
+        </div>
+
+        <div id="dashboardTab" class="tab-content">
+            <section class="dashboard-section">
+                <h2>Assignee Dashboard</h2>
+                <input type="text" id="assigneeSearch" placeholder="Search assignees...">
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <h3 id="totalAssignees">0</h3>
+                        <p>Assignees</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalTasks">0</h3>
+                        <p>Total Tasks</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="completedTasks">0</h3>
+                        <p>Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="overdueTasks">0</h3>
+                        <p>Overdue</p>
+                    </div>
+                </div>
+                <div class="assignee-list" id="assigneeList"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
