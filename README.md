@@ -1,4 +1,4 @@
-##Task Manager Web Application
+## Task Manager Web Application
 A responsive and user-friendly web-based Task Manager designed to help users efficiently create, organize, and track daily tasks. The application provides task filtering, sorting, completion tracking, and real-time productivity statistics with data stored in the browser’s Local Storage.
 
 ## Features
